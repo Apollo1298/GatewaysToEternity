@@ -27,7 +27,7 @@ neoForge {
 
     runs {
         configureEach {
-            logLevel = org.slf4j.event.Level.DEBUG
+            logLevel = org.slf4j.event.Level.INFO
             taskBefore generateModMetadata
         }
 
@@ -232,6 +232,16 @@ sourceSets {
         resources {
             srcDir 'src/templates'
         }
+    }
+}
+
+// Soft-compat sources require optional localImplementation deps; exclude when those pins are commented out.
+sourceSets.main.java {
+    if (!project.hasProperty('jeiVersion')) {
+        exclude '**/compat/GatewayJEIPlugin.java'
+    }
+    if (!project.hasProperty('jadeVersion')) {
+        exclude '**/compat/GatewayJadePlugin.java'
     }
 }
 

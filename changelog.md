@@ -1,3 +1,8 @@
+## 7.0.0
+* Ported to Minecraft 26.2 / NeoForge 26.2.
+* Updated to Placebo 11.0.0 and Apothic Attributes 4.0.0.
+* JEI/Jade soft-compat deferred until 26.2 artifacts are available.
+
 ## 6.0.2
 * Updated to Placebo 10.0.2.
 * Fixed endless gateways crashing when an attribute wave modifier was applied multiple times in one wave. Fixes Apotheosis#1768.
